@@ -1,6 +1,6 @@
 using System;
 
-namespace Mervit
+namespace Mervit.Api
 {
     public class WeatherForecast
     {

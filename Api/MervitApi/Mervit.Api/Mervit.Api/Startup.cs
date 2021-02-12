@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mervit
+namespace Mervit.Api
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace Mervit
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mervit", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mervit.Api", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace Mervit
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mervit v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mervit.Api v1"));
             }
 
             app.UseHttpsRedirection();
