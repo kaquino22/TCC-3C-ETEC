@@ -1,0 +1,7 @@
+{
+  "name": "Socialay",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

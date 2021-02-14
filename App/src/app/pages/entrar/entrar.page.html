@@ -1,0 +1,31 @@
+<ion-content>
+
+  <ion-img (click)="goBack()" class="voltarBotao" [src]="voltarIcon"></ion-img>
+<ion-grid>
+  <ion-row class="center espaco">
+    <ion-text class="TextoOla">Insira suas informações para realizar o login</ion-text>
+  </ion-row>
+  <ion-row class="center espaco">    
+    <ion-item style="width: 90%;">
+      <ion-label style="width: 90%;" position="floating"><ion-text class="TextoNor">E-mail </ion-text></ion-label>
+      <ion-input class="TextoLabel"></ion-input>
+    </ion-item>    
+  </ion-row>
+  <ion-row class="center">    
+    <ion-item style="width: 90%;">
+      <ion-label style="width: 90%;" position="floating"><ion-text class="TextoNor">Senha </ion-text></ion-label>
+      <ion-input type="password" class="TextoLabel"></ion-input>            
+    </ion-item>   
+  </ion-row>
+  <ion-row style="margin-left: 20px; margin-top: 6px">
+  <ion-text style="font-size: 10px;" color="danger">Sua senha está incorreta. Por favor, tente novamente</ion-text>
+  </ion-row>
+  <ion-row>
+  <ion-text style="margin-left: 20px; margin-top: 6px; margin-bottom: 68px;font-size: 14px; color: #1F5A92;">Esqueci minha senha</ion-text>
+</ion-row>
+  <ion-row class="center">
+    <ion-button  [routerLink]="['/home/']"  class="botao">Entrar</ion-button>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

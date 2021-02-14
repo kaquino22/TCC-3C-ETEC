@@ -1,0 +1,86 @@
+.top{
+    position: absolute;
+    width: 100%;
+    height: 213px;
+    left: 0px;
+    top: 0px;
+    background: #1E5991;
+    opacity: 0.15;
+    border-radius: 0px 0px 0px 40px;
+}
+
+.logo{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 16px;
+    top: 16px;}
+
+    .avatar{
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        left: 312px;
+        top: 24px;
+        border-radius: 0px 0px 0px 169px;
+    }
+
+    .TextoOla{
+        margin-left: 16px;
+        color: #161616;
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+        text-align: left;
+    }
+
+    .textSlide{
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .bottom{
+        position: absolute;
+        width: 100%;
+        height: 275px;
+        left: 0px;
+        top: 500px;
+        background: #0E4981;
+        opacity: 0.15;
+        border-radius: 40px 0px 0px 0px;
+    }
+
+    .nomePessoas{
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 26px;
+        color: #161616;
+    }
+
+    .cardPessoas{
+        width: 140px;
+        height: 194px;
+        background: #FFFAFA;
+        box-shadow: 10px 10px 2px rgb(0 0 0 / 12%);
+        border-radius: 12px;
+    }
+
+
+
+    .fotoPessoa{
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        top: 40px;
+        left: 36px;
+        border-radius: 40px !important;
+
+        overflow: hidden;
+    }

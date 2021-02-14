@@ -1,0 +1,24 @@
+
+<body class="background ion-text-center">
+ 
+  <ion-grid class="ionGrid">
+    <ion-row class="ionRow">
+      <ion-card class="localInitial">
+        <ion-grid class="ionGrid">
+        <ion-row>
+            <ion-img class="marginAuto imgLogo" [src]="fotologo"></ion-img>
+        </ion-row>
+        <ion-row class="espaco">
+          <ion-text class="TextoOla">Olá, é muito bom ver você aqui!</ion-text>
+          <ion-text class="textoMenor">Bem-vindo ao Design Diário, o maior portal para se informar sobre design.</ion-text>
+        </ion-row>
+        <ion-row class="rowBotao">
+          <ion-button  [routerLink]="['/registrar/']" class="botao espaco2">Sou Novo</ion-button><br>
+          <ion-text   [routerLink]="['/entrar/']" color="primary"><a class="possuoConta">Já Possuo Conta</a></ion-text>
+        </ion-row>
+      </ion-grid>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</body>

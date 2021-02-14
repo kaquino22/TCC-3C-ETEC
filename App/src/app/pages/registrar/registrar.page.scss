@@ -1,0 +1,46 @@
+.TextoOla{
+    margin-left: 16px;
+    color: #161616;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: left;
+}
+
+.TextoNor{
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #161616;
+    opacity: 0.5;
+}
+.espaco{
+    margin-bottom: 28px;
+}
+
+.botao{ 
+    width: 296px;
+    height: 56px; 
+    font-weight: 700;
+    border-radius: 12px;
+    font-family: 'Quicksand', sans-serif;
+ 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.12);
+ }
+.TextoLabel{
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #161616;
+}
+
+
+.center{
+    place-content: center;
+}

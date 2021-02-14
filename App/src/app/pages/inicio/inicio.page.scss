@@ -1,0 +1,87 @@
+
+body{
+    background: url(background.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: zoom 5s ease infinite;
+}
+
+.ionGrid{
+    height: 100% !important;
+}
+
+.imgLogo{
+    padding: 24px;
+
+}
+
+.espaco{
+    margin-bottom: 24px;
+}
+
+.espaco2{
+    margin-bottom: 24px;
+}
+.ionRow{
+    height: 100%;
+    place-content: center; 
+    flex-direction: column;
+}
+
+.localInitial{
+    width:328px;
+    height:433px;
+    border-radius: 32px;
+}
+
+.botao{ 
+   width: 296px;
+   height: 56px; 
+   font-weight: 700;
+   border-radius: 12px;
+   font-family: 'Quicksand', sans-serif;
+
+   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.possuoConta{
+    font-weight: 700;
+}
+
+.marginAuto{
+    margin: auto;
+}
+
+.TextoOla{
+    color: #161616;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+}
+
+.textoMenor{
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.rowBotao{
+    place-content: center;
+}
+
+@keyframes zoom {
+    0% {
+        background-size: 100%;  
+    }
+    50% {
+        background-size: 150%;  
+    }
+    100% {
+        background-size: 100%;  
+    }
+  }
