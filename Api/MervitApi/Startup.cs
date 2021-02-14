@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MervitApi.Data;
+using MervitApi.Data.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace MervitApi
 {
@@ -26,6 +29,11 @@ namespace MervitApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Contrato entre os repositórios
+            IoC.DependencyInjectionSetup.RegisterServices(services);
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("default")));
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -48,12 +56,19 @@ namespace MervitApi
 
             app.UseRouting();
 
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+           );
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

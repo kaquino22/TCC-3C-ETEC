@@ -2,32 +2,18 @@ using System;
 using System.Collections.Generic;
 using MervitApi.Model;
 using MervitApi.Data;
+using MervitApi.Models;
+using MervitApi.Data.Interface;
 
 namespace MervitApi.Data{
-    public class UsuarioRepository {
+    public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository {
 
-        public Usuario GetUsuarioById(int id){
-            Usuario user =  new Usuario();
-            user.Id = 1;
-            user.Email = "eae@gmail.com";
-            user.Senha = "senha312";
+        private readonly ApplicationDbContext _context;
 
-            if(id == user.Id){
-                return user;
-            }
-
-            return null;
+        public UsuarioRepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
         }
-        public Usuario GetUsuarioByEmaileSenha(string email, string senha){
-            Usuario user =  new Usuario();
 
-            user.Email = email;
-            user.Senha = senha;
-
-            return user;
-        }
-        public Usuario PostUsuario(Usuario user){
-            return null;
-        }
     }
 }

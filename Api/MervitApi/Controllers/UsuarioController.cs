@@ -1,26 +1,33 @@
 using Microsoft.AspNetCore.Mvc;
 using MervitApi.Data;
 using MervitApi.Model;
+using MervitApi.Data.Interface;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MervitApi.Controller
 {
     [ApiController]
+    [Authorize]
     [Route("usuario")]
     public class UsuarioController : ControllerBase{
-        private readonly UsuarioRepository usuarioRepository;
+        private readonly IUsuarioRepository UsuarioRepository;
 
-        public UsuarioController(){
-            usuarioRepository = new UsuarioRepository();
-        }
-
-        [HttpGet]    
-        public Usuario Login(string Email, string Senha){
-            return usuarioRepository.GetUsuarioByEmaileSenha(Email,Senha);
+        public UsuarioController(
+            IUsuarioRepository usuarioRepository
+        ){
+            UsuarioRepository = usuarioRepository;
         }
 
         [HttpGet("{id}")]    
-        public Usuario GetById(int id){
-            return usuarioRepository.GetUsuarioById(id);
+        public ActionResult GetById(int id){
+            var User = UsuarioRepository.GetById(id);
+
+            if (User == null)
+            {
+                return Ok(new { error = "Usuário não encontrado!" });
+            }
+
+            return Ok(new { User });
         }
     }
 }
