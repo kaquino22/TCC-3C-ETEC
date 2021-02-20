@@ -3,24 +3,18 @@ using MervitApi.Data;
 using MervitApi.Model;
 using MervitApi.Data.Interface;
 using Microsoft.AspNetCore.Authorization;
+using MervitApi.Services.Interface;
 
 namespace MervitApi.Controller
 {
     [ApiController]
-    [Authorize]
     [Route("usuario")]
     public class UsuarioController : ControllerBase{
-        private readonly IUsuarioRepository UsuarioRepository;
-
-        public UsuarioController(
-            IUsuarioRepository usuarioRepository
-        ){
-            UsuarioRepository = usuarioRepository;
-        }
+        public UsuarioController(){}
 
         [HttpGet("{id}")]    
-        public ActionResult GetById(int id){
-            var User = UsuarioRepository.GetById(id);
+        public ActionResult GetById([FromServices] IUsuarioServices usuarioService,int id){
+            var User = usuarioService.GetUsuario(id);
 
             if (User == null)
             {

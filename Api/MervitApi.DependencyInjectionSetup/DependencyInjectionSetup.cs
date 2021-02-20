@@ -2,8 +2,10 @@
 using MervitApi.Data.Interface;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using MervitApi.Services;
+using MervitApi.Services.Interface;
 
-namespace MervitApi.IoC
+namespace MervitApi.DependencyInjectionSetup
 {
     public static class DependencyInjectionSetup
     {
@@ -12,7 +14,8 @@ namespace MervitApi.IoC
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-           
+
+            services.AddTransient<IUsuarioServices, UsuarioServices>();
         }
     }
 }

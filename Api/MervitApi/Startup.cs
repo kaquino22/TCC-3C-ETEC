@@ -30,7 +30,7 @@ namespace MervitApi
         public void ConfigureServices(IServiceCollection services)
         {
             //Contrato entre os repositórios
-            IoC.DependencyInjectionSetup.RegisterServices(services);
+            DependencyInjectionSetup.DependencyInjectionSetup.RegisterServices(services);
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("default")));
 

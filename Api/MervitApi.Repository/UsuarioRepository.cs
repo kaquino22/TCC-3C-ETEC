@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using MervitApi.Model;
-using MervitApi.Data;
-using MervitApi.Models;
 using MervitApi.Data.Interface;
+using MervitApi.Model;
+using MervitApi.Repository;
 
 namespace MervitApi.Data{
     public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository {

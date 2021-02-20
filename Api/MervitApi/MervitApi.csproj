@@ -20,4 +20,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MervitApi.DependencyInjectionSetup\MervitApi.DependencyInjectionSetup.csproj" />
+    <ProjectReference Include="..\MervitApi.Repository\MervitApi.Repository.csproj" />
+    <ProjectReference Include="..\MervitApi.Services\MervitApi.Services.csproj" />
+  </ItemGroup>
+
 </Project>
