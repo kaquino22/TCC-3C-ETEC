@@ -1,4 +1,6 @@
 ﻿using MervitApi.Data.Interface;
+using MervitApi.Models;
+using MervitApi.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,31 +11,40 @@ using System.Threading.Tasks;
 
 namespace MervitApi.Controllers
 {
-    [Route("[controller]")]
+    [Route("Account")]
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly IUsuarioRepository UsuarioRepository;
+        private readonly IAccountService AccountService;
 
         public AccountController(
-            IUsuarioRepository usuarioRepository
+            IAccountService accountService
         )
         {
-            UsuarioRepository = usuarioRepository;
+            AccountService = accountService;
         }
 
-        [HttpGet]
-        [Route("login")]
-        public ActionResult Login(string Email, string Senha)
+        [HttpPost]
+        [Route("Login")]
+        public ActionResult Login([FromBody] LoginViewModel dados)
         {
-            var User = UsuarioRepository.FindFirstBy(x => x.Email == Email && x.Senha == Senha);
+            var User = AccountService.Login(dados);
 
             if (User == null)
             {
-                return Ok(new { error = "Usuário não encontrado!" });
+                return Ok(new { error = true });
             }
 
-            return Ok(new { User });
+            return Ok(new { User, error = false });
+        }
+
+        [HttpPost]
+        [Route("Register")]
+        public ActionResult Register([FromBody] RegisterViewModel register)
+        {
+            AccountService.Register(register);
+
+            return Ok(new { success = true});
         }
     }
 }

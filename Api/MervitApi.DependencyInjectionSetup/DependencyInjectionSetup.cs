@@ -16,6 +16,7 @@ namespace MervitApi.DependencyInjectionSetup
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             services.AddTransient<IUsuarioServices, UsuarioServices>();
+            services.AddTransient<IAccountService, AccountService>();
         }
     }
 }

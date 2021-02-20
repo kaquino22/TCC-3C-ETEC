@@ -1,3 +1,5 @@
+using System;
+
 namespace MervitApi.Model
 {
     public class Usuario{
@@ -7,5 +9,6 @@ namespace MervitApi.Model
         public string Email { get; set; }
         public string Senha {get;set;}
         public string SenhaTemp { get; set; }
+        public DateTime DataRegistro { get; set; }
     }
 }

@@ -7,33 +7,33 @@
         </ion-row>
         <ion-row class="center espaco">    
           <ion-item style="width: 90%;">
-            <ion-label style="width: 90%;" position="floating"><ion-text class="TextoNor">Nome </ion-text></ion-label>
-            <ion-input class="TextoLabel"></ion-input>
+            <ion-label style="width: 90%;"  position="floating"><ion-text class="TextoNor">Nome </ion-text></ion-label>
+            <ion-input [(ngModel)]="nome" class="TextoLabel"></ion-input>
           </ion-item>    
         </ion-row>
         <ion-row class="center espaco">    
           <ion-item style="width: 90%;">
             <ion-label style="width: 90%;" position="floating"><ion-text class="TextoNor">E-mail </ion-text></ion-label>
-            <ion-input class="TextoLabel"></ion-input>
+            <ion-input  [(ngModel)]="email" class="TextoLabel"></ion-input>
           </ion-item>    
         </ion-row>
         <ion-row class="center espaco">    
           <ion-item style="width: 90%;">
-            <ion-label style="width: 90%;" position="floating"><ion-text class="TextoNor">Senha </ion-text></ion-label>
-            <ion-input type="password" class="TextoLabel"></ion-input>            
+            <ion-label style="width: 90%;"  position="floating"><ion-text class="TextoNor">Senha </ion-text></ion-label>
+            <ion-input [(ngModel)]="senha" type="password" class="TextoLabel"></ion-input>            
           </ion-item>   
         </ion-row>
         <ion-row class="center">    
           <ion-item style="width: 90%;">
             <ion-label style="width: 90%;" position="floating"><ion-text class="TextoNor">Confirme a Senha </ion-text></ion-label>
-            <ion-input type="password" class="TextoLabel"></ion-input>            
+            <ion-input [(ngModel)]="confirmaSenha"  type="password" class="TextoLabel"></ion-input>            
           </ion-item>   
         </ion-row>
         <ion-row style="margin-left: 20px; margin-top: 6px; margin-bottom: 36px;">
-        <ion-text style="font-size: 10px;" color="danger">As senhas não coincidem. Por favor, tente novamente</ion-text>
+        <ion-text style="font-size: 10px;" *ngIf="senhaError == true" color="danger">As senhas não coincidem. Por favor, tente novamente</ion-text>
         </ion-row>
         <ion-row class="center">
-          <ion-button class="botao">Finalizar cadastro</ion-button>
+          <ion-button (click)="register()" class="botao">Finalizar cadastro</ion-button>
         </ion-row>
       </ion-grid>
 

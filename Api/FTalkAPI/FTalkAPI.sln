@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MervitApi", "..\MervitApi\MervitApi.csproj", "{28E44E30-84D2-44C3-AD9C-0F362A28F319}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MervitApi.DependencyInjectionSetup", "..\MervitApi.DependencyInjectionSetup\MervitApi.DependencyInjectionSetup.csproj", "{D26B772D-A515-4E7F-B7A2-1D44B7A76144}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MervitApi.Model", "..\MervitApi.Model\MervitApi.Model.csproj", "{D16E8E43-4E3B-4C8C-BCCA-973E71C81103}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MervitApi.Repository", "..\MervitApi.Repository\MervitApi.Repository.csproj", "{BD0A00C0-4ED0-44BD-9C82-C57A685316AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MervitApi.Services", "..\MervitApi.Services\MervitApi.Services.csproj", "{49653021-7BCC-4ACD-A2D0-85530D3A5433}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28E44E30-84D2-44C3-AD9C-0F362A28F319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E44E30-84D2-44C3-AD9C-0F362A28F319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E44E30-84D2-44C3-AD9C-0F362A28F319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E44E30-84D2-44C3-AD9C-0F362A28F319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26B772D-A515-4E7F-B7A2-1D44B7A76144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26B772D-A515-4E7F-B7A2-1D44B7A76144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26B772D-A515-4E7F-B7A2-1D44B7A76144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26B772D-A515-4E7F-B7A2-1D44B7A76144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D16E8E43-4E3B-4C8C-BCCA-973E71C81103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D16E8E43-4E3B-4C8C-BCCA-973E71C81103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D16E8E43-4E3B-4C8C-BCCA-973E71C81103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D16E8E43-4E3B-4C8C-BCCA-973E71C81103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0A00C0-4ED0-44BD-9C82-C57A685316AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0A00C0-4ED0-44BD-9C82-C57A685316AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0A00C0-4ED0-44BD-9C82-C57A685316AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0A00C0-4ED0-44BD-9C82-C57A685316AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49653021-7BCC-4ACD-A2D0-85530D3A5433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49653021-7BCC-4ACD-A2D0-85530D3A5433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49653021-7BCC-4ACD-A2D0-85530D3A5433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49653021-7BCC-4ACD-A2D0-85530D3A5433}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C06C6C60-1ED1-4B6B-A491-0E2EB32F7E80}
+	EndGlobalSection
+EndGlobal
