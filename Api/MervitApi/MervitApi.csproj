@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>0a94b956-365b-4460-ad7c-e36f8bf5c4ca</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FTalkAPI\MervitApi.Helper\MervitApi.Helper.csproj" />
     <ProjectReference Include="..\MervitApi.DependencyInjectionSetup\MervitApi.DependencyInjectionSetup.csproj" />
     <ProjectReference Include="..\MervitApi.Repository\MervitApi.Repository.csproj" />
     <ProjectReference Include="..\MervitApi.Services\MervitApi.Services.csproj" />

@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using MervitApi.Services.Interface;
 using MervitApi.Model;
 using MervitApi.Models;
+using System.Security.Cryptography;
+using MervitApi.Helper;
 
 namespace MervitApi.Services
 {
@@ -26,16 +28,18 @@ namespace MervitApi.Services
 
         public Usuario Login(LoginViewModel dados)
         {
+            dados.Senha = dados.Senha.Md5Hash();
             return UsuarioRepository.FindFirstBy(x => x.Email == dados.Email && x.Senha == dados.Senha);
         }
 
         public void Register(RegisterViewModel dados)
         {
             Usuario user = new Usuario();            
-
+            
             user.Nome = dados.Nome;
             user.Email = dados.Email;
-            user.Senha = dados.Senha;
+            user.Senha = dados.Senha.Md5Hash();
+
             user.DataRegistro = DateTime.Now;
 
             UsuarioRepository.Add(user);

@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using MervitApi.Data;
 using MervitApi.Data.Interface;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace MervitApi
 {
@@ -38,13 +39,18 @@ namespace MervitApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MervitApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FTalk", Version = "v1" });
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -61,7 +67,7 @@ namespace MervitApi
                .AllowAnyMethod()
                .AllowAnyHeader()
            );
-            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

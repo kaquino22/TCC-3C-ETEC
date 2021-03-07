@@ -1,4 +1,7 @@
+import { MenuController, NavController } from '@ionic/angular';
+import { TokenService } from './../../services/token.service';
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-home',
@@ -7,37 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  public icon: string = "../../assets/img/logo.svg";
-  public ajuda: string = "../../assets/img/ajuda.svg";
-  public avatar: string = "../../assets/img/avatar.svg";
-  public postagem: string = "../../assets/img/postagem.png";
-  public postagemShingeki: string = "../../assets/img/shingeki.jpg";
-  public postagemNaruto: string = "../../assets/img/naruto.jpg";
+  public token: string = "";
+  public user: Usuario;
 
-  constructor() { }
+  constructor(public tokenService: TokenService, public navController: NavController, private menu: MenuController) { }
 
-  slideOpts = {
-    initialSlide: 0,
-    speed: 400,
-    width: 100    
-  };
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
 
-  slideOptsConteudo = {
-    initialSlide: 0,
-    speed: 400,
-    width: 250
-    
-  };
+  openEnd() {
+    this.menu.open('end');
+  }
 
-  slideOptsPessoas = {
-    initialSlide: 0,
-    speed: 400,
-    width: 140
-    
-  };
+  openCustom() {
+    this.menu.enable(true, 'custom');
+    this.menu.open('custom');
+  }
+
+
   ngOnInit() {
+    this.token = this.tokenService.getToken();
 
-    
+    this.user = this.tokenService.getUser();
+ 
+    if(this.token == null || this.token == ""){
+      this.navController.navigateRoot(`/`)
+    }
+
+    console.log(this.token);
   }
 
 }

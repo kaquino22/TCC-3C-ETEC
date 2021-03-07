@@ -1,4 +1,5 @@
 ﻿using MervitApi.Data.Interface;
+using MervitApi.Helper;
 using MervitApi.Models;
 using MervitApi.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
@@ -35,7 +36,15 @@ namespace MervitApi.Controllers
                 return Ok(new { error = true });
             }
 
-            return Ok(new { User, error = false });
+            UsuarioModel usuario = new UsuarioModel();
+
+            usuario.Email = User.Email;
+            usuario.Nome = User.Nome;
+            usuario.Id = User.Id;
+
+            var token = TokenHelper.GenerateToken(User);
+
+            return Ok(new { usuario, Token = token, error = false });
         }
 
         [HttpPost]

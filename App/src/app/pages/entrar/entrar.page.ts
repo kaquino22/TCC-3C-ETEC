@@ -1,3 +1,4 @@
+import { TokenService } from './../../services/token.service';
 import { AccountServiceService } from './../../services/account-service/account-service.service';
 import { AppServiceService } from './../../services/app-service/app-service.service';
 import { Login } from './../../model/login';
@@ -13,9 +14,10 @@ export class EntrarPage implements OnInit {
   public voltarIcon = '../../assets/icon/voltar.svg';
   public email: string;
   public senha: string;
+  public erro:object;
   public erroLogin: boolean = false;
   public loginobj: Login = new Login();
-  constructor(public navController: NavController, public appService:AppServiceService, public accountService: AccountServiceService) { }
+  constructor(public tokenService: TokenService,public navController: NavController, public appService:AppServiceService, public accountService: AccountServiceService) { }
 
   ngOnInit() {
   }
@@ -37,10 +39,16 @@ export class EntrarPage implements OnInit {
       return;
     }
 
-    this.accountService.getUsuario(this.loginobj).subscribe(data =>{
-      console.log(data)
+    this.accountService.login(this.loginobj).subscribe(data =>{
+      this.erro = data;
         this.erroLogin = data["error"];
+        if(data["error"] == true){
 
+        }else{
+          this.tokenService.setToken(data["token"]);
+          this.tokenService.setUser(data["usuario"]);
+          this.navController.navigateRoot(`/home`);
+        }
     });
           
     

@@ -7,14 +7,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class AccountServiceService {
 
-  public environmentLink = environment.urlDev;
+  public environmentLink = environment.urlProd;
   constructor(public http: HttpClient) { }
 
 
-  getUsuario(login) {
-    let headers = new HttpHeaders().set("Content-Type", "application/json");
-
-    return this.http.post(`${this.environmentLink}Account/Login`, login, { headers });
+  login(login) {
+    return this.http.post(`${this.environmentLink}Account/Login`, login,);
   }
 
   registerUsuario(register) {

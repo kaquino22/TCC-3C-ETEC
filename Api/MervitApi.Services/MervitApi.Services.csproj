@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FTalkAPI\MervitApi.Helper\MervitApi.Helper.csproj" />
     <ProjectReference Include="..\MervitApi.Repository\MervitApi.Repository.csproj" />
   </ItemGroup>
 

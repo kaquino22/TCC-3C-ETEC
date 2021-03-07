@@ -1,134 +1,23 @@
-<ion-content>
-  <div class="top"></div>
-  <ion-row style="margin-bottom: 30px;">
-    <ion-col size="10"> 
-       <ion-img class="logo" [src]="icon"></ion-img>
-      </ion-col>
-    <ion-col style="top: 16px;" size="2"> 
-      <ion-icon style="font-size: 34px; top:16px;" name="person-circle-outline"></ion-icon>
-    </ion-col>
-  </ion-row>
+<ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>{{user.nome}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+    </ion-content>
+  </ion-menu>
 
-  <ion-row>
-    <ion-text class="TextoOla">Olá, Kauã</ion-text>
-  </ion-row>
-  <ion-row style="margin-left: 16px;">
-    <ion-text>Veja aqui as novidades do mundo e fique por dentro de tudo que acontece.</ion-text>
-  </ion-row>
+  <ion-router-outlet id="main"></ion-router-outlet>
 
-  <ion-row>
-    <ion-slides  [options]="slideOpts">
-      <ion-slide>
-        <h4 class="textSlide">Para você</h4>
-      </ion-slide>
-      <ion-slide>
-        <h4 class="textSlide">UI/UX</h4>
-      </ion-slide>
-      <ion-slide>
-        <h4 class="textSlide">Animes</h4>
-      </ion-slide>
-      <ion-slide>
-        <h4 class="textSlide">Javascript</h4>
-      </ion-slide>
-    </ion-slides>
-  </ion-row>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>FTalk</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
 
-  <ion-row>
-    <ion-slides  [options]="slideOptsConteudo">
-     
-      <ion-slide>
-        <ion-card>
-          <img [src]="postagem">
-          <ion-card-content   style="min-height: 140px; max-height: 140px;">
-            <ion-row>
-               <ion-text class="TextoOla">Uma lista vasta (e honesta de dicas de UX)</ion-text>
-            </ion-row>
-            <ion-row style="align-items: center !important;">
-              <ion-icon style="font-size: 34px;" name="person-circle-outline"></ion-icon> <ion-text class="textSlide"> &nbsp; &nbsp; Anna Swerd</ion-text>
-           </ion-row>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <img [src]="postagemNaruto">
-          <ion-card-content   style="min-height: 140px; max-height: 140px;">
-            <ion-row>
-               <ion-text class="TextoOla">O Fim de uma grande era!</ion-text>
-            </ion-row>
-            <ion-row style="align-items: center !important;">
-              <ion-icon style="font-size: 34px;" name="person-circle-outline"></ion-icon> <ion-text class="textSlide"> &nbsp; &nbsp; Petter Suricato</ion-text>
-           </ion-row>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card class="cardsNoticias">
-          <img [src]="postagemShingeki">
-          <ion-card-content style="min-height: 140px; max-height: 140px;">
-            <ion-row>
-               <ion-text class="TextoOla">Top Titãs de Shingeki no Kyojin</ion-text>
-            </ion-row>
-            <ion-row style="align-items: center !important;">
-              <ion-icon style="font-size: 34px;" name="person-circle-outline"></ion-icon> <ion-text class="textSlide"> &nbsp; &nbsp; Louus Narue</ion-text>
-           </ion-row>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  </ion-row>
-
-
-  <ion-row>
-    <ion-slides  [options]="slideOptsPessoas">
-    
-      <ion-slide>
-        <ion-card class="cardPessoas">
-          <img [src]="postagem">
-          <img style="border-radius: 40px;" class="fotoPessoa" [src]="icon">
-          <ion-card-content style="margin-top: 12px;">
-              <ion-row style="place-content: center;"><ion-text class="nomePessoas">Mario</ion-text></ion-row>
-               <ion-row style="place-content: center;"><ion-button class="nomePessoas" expand="block" color="primary">Seguir</ion-button></ion-row> 
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      
-      <ion-slide>
-        <ion-card class="cardPessoas">
-          <img [src]="postagem">
-          <img style="border-radius: 40px;" class="fotoPessoa" [src]="icon">
-          <ion-card-content style="margin-top: 12px;">
-              <ion-row style="place-content: center;"><ion-text class="nomePessoas">João</ion-text></ion-row>
-               <ion-row style="place-content: center;"><ion-button class="nomePessoas" expand="block" color="primary">Seguir</ion-button></ion-row> 
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      
-      <ion-slide>
-        <ion-card class="cardPessoas">
-          <img [src]="postagem">
-          <img style="border-radius: 40px;" class="fotoPessoa" [src]="icon">
-          <ion-card-content style="margin-top: 12px;">
-              <ion-row style="place-content: center;"><ion-text class="nomePessoas">Vinicius</ion-text></ion-row>
-               <ion-row style="place-content: center;"><ion-button class="nomePessoas" expand="block" color="primary">Seguir</ion-button></ion-row> 
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    
-    </ion-slides>
-  </ion-row>
-
-  
-  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button color="primary">
-      <ion-icon name="search"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <div class="bottom"></div>
-
-</ion-content>
+  </ion-content>
