@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    urlDev: "https://localhost:5001/",
-    urlProd: "https://localhost:5001/",
+    urlDev: "http://198.74.98.113/",
+    urlProd: "http://198.74.98.113/",
   };
   
